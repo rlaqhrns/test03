@@ -1,0 +1,22 @@
+
+<script>
+function check() {
+  if(fr.id.value == "") {
+    alert("값을 입력해 주세요.");
+    fr.id.focus();
+    return false;
+  }
+  else if(fr.pw.value == "") {
+    alert("값을 입력해 주세요.");
+    fr.pw.focus();
+    return false;
+  }
+  else return true;
+}
+</script>
+
+<form name="fr" onsubmit="return check()">
+<input type="text" name="id" placeholder="id">
+<input type="text" name="pw" placeholder="pw">
+<input type="submit">
+</form

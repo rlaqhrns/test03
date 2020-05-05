@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Comment Form</title>
+    <link rel="stylesheet" href="/css/screen.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src = "http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "../js/jquery.validate.js"></script>
+  </head>
+  <body>
+    <form class="cmxform" id = "commentForm" action="form-handler.html" method="get" autocomplete="off">
+      <fieldset>
+        <legend>Comment Form</legend>
+        <p>
+          <label for="cname">Name <span>(required, at least 2 characters)</span>></label>
+          <input id="cname" type="text" name="name" >
+
+        </p>
+        <p>
+          <label for="cemail">E-mail <span>(required, won't be published)</span></label>
+          <input id="cemail" type="url" name="url">
+        </p>
+      </fieldset>
+
+    </form>
+
+  </body>
+</html>

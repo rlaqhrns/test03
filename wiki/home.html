@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="homestyle.css">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='js/colors.js'></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/passwordcheck.js"></script>
+
+
+   <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+ </head>
+<body>
+  <div class ='container'>
+    <div class = 'head'>
+    <h1><strong><a href="home.html">WiKi</a></strong></h1>
+    </div>
+    <div class = 'button'>
+      <input type="button" value="day" onclick="nightdayhandler(this);">
+    </div>
+    <div class = 'list'>
+    <ul text-align='center'id = 'nav'>
+      <h3>목차</h3>
+
+    </ul>
+    </div>
+    <div class="Search">
+      <form action="/action_page.php">
+        <label for="fname">Search:</label>
+        <input type="text" id="search" name="search">
+        <input type="submit" value="Submit">
+      </form>
+
+    </div>
+    <div class="login" style="line-height:1.5em">
+      <form>
+        <label for="fname">ID:</label>
+        <input type="text" placeholder="ID를 입력하시오." name="ID">
+        <label for="password">PW:</label>
+        <input type="password" id="password_1" class="pw" name="PW" pattern=".{8,}"placeholder="비밀번호">
+        <input type="button" name="login" value="login" onclick="">
+        <input type="button" name="join" value="join" onclick=window.open('join.html','JOIN','width=300,height=500,location=no,status=no,scrollbars=yes');>
+
+      </form>
+
+    </div>
+
+
+    <article class="content">
+
+    </article>
+</div>
+  <script>
+  function fetchPage(name){
+    fetch(name).then(function(response){
+    response.text().then(function(text){
+    document.querySelector('article').innerHTML = text;
+    })
+  });
+  }
+  if(location.hash){
+    fetchPage(location.hash.substr(0));
+  }
+  else{
+    fetchPage('content/welcome');
+  }
+  fetch('list').then(function(response){
+    response.text().then(function(text){
+      var items = text.split(',');
+      var tags = '';
+      for(var i=0;i<items.length;i++){
+        var item = items[i];
+        item = item.trim();
+        var tag = '<li><a href = "#!'+item+'" onclick="fetchPage(\'content/'+item+'\')">'+item+'</a></li>';
+        tags = tags + tag;
+      }
+
+      document.querySelector('#nav').innerHTML = tags;
+    })
+  })
+
+
+  </script>
+</body>
+</html>

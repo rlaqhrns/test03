@@ -1,0 +1,68 @@
+
+
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 200px;
+  grid-template-areas:
+  'header header header header header button'
+  'header header header header header login'
+  'Search Search Search Search Search list'
+  'content content content content content list';
+}
+.head{
+
+  text-align: center;
+  font-size: 45px;
+  padding: 30px 0 0 0;
+  border-right:1px solid gray;
+  margin: 0;
+
+  grid-area: header;
+}
+.head h1{margin-bottom: 0;}
+.button{
+  text-align: right;
+  padding: 90px 20px 0 0;
+
+  grid-area: button;
+}
+.login{
+  padding-left: 20px;
+  width: 0px;
+  grid-area: login;
+
+}
+.content{
+  text-align: center;
+  grid-area: content;
+
+
+}
+.content .img{
+  text-align: center;
+}
+.list ul{
+
+  margin: 0;
+  grid-area: list;
+
+}
+
+
+.Search{
+
+  border-right: 1px gray solid;
+
+  padding: 15px;
+  text-align:center;
+  grid-area: Search;
+}
+a{
+  color: lightgreen;
+  text-decoration:none;}
+body{
+  background-color: black;
+  color : white;
+
+}

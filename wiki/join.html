@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src='js/colors.js'></script>
+    <script src='js/join.js'></script>
+    <!-- <script src='js/join.js'></script> -->
+    <!-- <script>
+$(document).ready(function () {
+  $('#email').keyup(function () {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      var email = $('#email').val();
+      if (email == '' || !re.test(email)) {
+      $('#message').html("올바른 이메일 주소를 입력하세요").css('color','red');
+      return false;
+      }
+      else{
+
+        $('#message').html("올바른 이메일").css('color','green');
+      }
+  });
+});
+
+$(document).ready(function () {
+  var pwreg = /^[a-zA-Z0-9+]{8,20}$/;
+  if(pwreg.test($('#PW1').val())){
+  $('#PW1, #PW2').keyup( function () {
+      if ($('#PW1').val() === $('#PW2').val()) {
+          $('#message').html('일치').css('color', 'green');
+
+      } else
+          $('#message').html('비밀번호가 일치 하지않습니다.').css('color', 'red');
+
+    });
+  }
+  else {return false;}
+});
+
+// $(document).ready($('pw1','pw2','email','id',''))
+</script> -->
+
+  <style>
+
+    .login{
+      margin:20px;width: 250px; text-align: right;
+
+    }
+
+    h1{text-align: center;margin-top: 20px;}
+
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <div class="login" style="line-height:2.3em">
+      <form name="join" onsubmit="return subcheck()" action="/action_page.php">
+        <div class="joincontent">
+          <label for="name">NAME:</label>
+          <input type="text" id = "name" name="name" placeholder="이름을 입력하시오."><br>
+          <label for="fname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID:</label>
+          <input type="text" id = "id" name="id" placeholder="ID를 입력하시오."><br>
+          <label for="email">E-mail:</label>
+          <input type="email" id = "email" name="email" placeholder="이메일" title="이메일 양식" ><br>
+          <label for="password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PW:</label>
+          <input type="password" id = "PW1" name="pw1" pattern = ".{8,}" placeholder="비밀번호 8자리 이상" ><br>
+          <label for="password">PWCK:</label>
+          <input type="password" id = "PW2" name="pw2" pattern = ".{8,}" placeholder="비밀번호 확인" ><br>
+          <span id='message'></span><br>
+          <input type="radio" name="gender" value="남자" >
+          <label for="male">남</label>
+          <input type="radio" name="gender" value="여자">
+          <label for="female">여</label><br>
+          <label for="psnumber" align="left">생년월일:</label>
+          <input type="date" name="birthday">
+        </div>
+        <input type="submit" class="joinbutton" value="join">
+        <input type="button"class="closebutton" value="닫기" onclick="window.close();">
+
+      </form>
+
+    </div>
+
+
+  </body>
+</html>
